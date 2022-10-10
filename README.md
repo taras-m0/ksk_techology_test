@@ -1,5 +1,3 @@
-# ksk4
-
 ## Project setup
 ```
 npm install
