@@ -1,5 +1,5 @@
 {
-  "name": "ksk4",
+  "name": "ksk_techology",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -28,6 +28,7 @@
     "eslint-plugin-vuejs-accessibility": "^1.1.0",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
+    "vue-cli-plugin-pug": "~2.0.0",
     "vue-template-compiler": "^2.6.14"
   }
 }

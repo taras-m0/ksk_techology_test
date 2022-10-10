@@ -1,32 +1,80 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <top-header></top-header>
+    <section class="app__content">
+      <filter-left class="app__filter-left"></filter-left>
+      <div class="app__content-right">
+        <div class="app__content-top">
+          <sorted-top class="app__content-sorted"></sorted-top>
+          <nav-top></nav-top>
+        </div>
+        <router-view class="app__main" />
+      </div>
+    </section>
+
   </div>
 </template>
 
-<style lang="scss">
+<script>
+import TopHeader from '@/components/TopHeader.vue';
+import FilterLeft from '@/components/FilterLeft.vue';
+import SortedTop from '@/components/SortedTop.vue';
+import NavTop from '@/components/NavTop.vue';
+
+export default {
+  components: {
+    TopHeader, FilterLeft, SortedTop, NavTop,
+  },
+};
+</script>
+
+<style>
+html, body {
+  height: 100%;
+  min-height: 100%;
+  background-color: #E5E5E5;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  background-color: #E5E5E5;
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.app__content {
+  margin: 32px auto 0;
+  max-width: 90%;
+  display: flex;
 }
+
+.app__filter-left {
+  margin-right: 16px;
+  align-self: flex-start;
+}
+
+.app__content-right {
+  flex-grow: 1;
+}
+
+.app__content-top {
+  display: flex;
+  align-items: center;
+}
+
+.app__content-sorted {
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin-right: 17px;
+}
+
+.app__main {
+  margin-top: 16px
+}
+
 </style>
